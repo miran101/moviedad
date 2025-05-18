@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix Clone</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #141414;
+      color: white;
+    }
+    header {
+      background-color: #141414;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: red;
+    }
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+    }
+    .hero {
+      background: url('https://assets.nflxext.com/ffe/siteui/vlv3/012be34b-d99b-4ab6-a3a9-7b85a62fbb7f/b29f548b-f7ec-43ea-a0b8-622e31b7b152/US-en-20240513-popsignuptwoweeks-perspective_alpha_website_large.jpg') no-repeat center center/cover;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      max-width: 700px;
+    }
+    .movie-row {
+      padding: 20px;
+    }
+    .movie-row h2 {
+      margin-bottom: 10px;
+    }
+    .row-posters {
+      display: flex;
+      overflow-x: auto;
+    }
+    .row-posters img {
+      width: 150px;
+      margin-right: 10px;
+      border-radius: 5px;
+      transition: transform 0.2s;
+    }
+    .row-posters img:hover {
+      transform: scale(1.1);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">NETFLIX</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">TV Shows</a>
+      <a href="#">Movies</a>
+      <a href="#">Latest</a>
+      <a href="#">My List</a>
+    </nav>
+  </header>
+  <div class="hero">
+    <h1>Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime.</h1>
+  </div>
+
+  <div class="movie-row">
+    <h2>Trending Now</h2>
+    <div class="row-posters" id="trending-row">
+      <!-- Movie posters added by JS -->
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Netflix Clone. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const trendingRow = document.getElementById('trending-row');
+    const movies = [
+      'https://image.tmdb.org/t/p/w500/8YFL5QQVPy3AgrEQxNYVSgiPEbe.jpg',
+      'https://image.tmdb.org/t/p/w500/6bCplVkhowCjTHXWv49UjRPn0eK.jpg',
+      'https://image.tmdb.org/t/p/w500/9O1Iy9od7u5sU1kVbdlAwE7Q6Wu.jpg',
+      'https://image.tmdb.org/t/p/w500/jTNYlTEijZ6c8Mn4gvINOeB2HWM.jpg',
+      'https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg',
+      'https://image.tmdb.org/t/p/w500/4ZocdxnOO6q2UbdKye2wgofLFhB.jpg',
+      'https://image.tmdb.org/t/p/w500/s1cTV4LiL0me6nHPLx0LBTf4Wt5.jpg'
+    ];
+
+    movies.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      trendingRow.appendChild(img);
+    });
+  </script>
+</body>
+</html>
